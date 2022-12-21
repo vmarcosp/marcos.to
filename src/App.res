@@ -21,6 +21,12 @@ Emotion.injectGlobal({
 
 let default = (props): React.element => {
   let {component, pageProps} = props
+  let layout = component->NextHelpers.getLayout
 
-  <Layout> {React.createElement(component, pageProps)} </Layout>
+  {
+    switch layout {
+    | None => <Layout> {React.createElement(component, pageProps)} </Layout>
+    | Some(layout) => layout(React.createElement(component, pageProps))
+    }
+  }
 }
