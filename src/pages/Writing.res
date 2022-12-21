@@ -14,7 +14,7 @@ let default = ({posts}: props) => {
       fontSize={xs: 3.2->#rem, md: 4.6->#rem}
       color={xs: #black}
       fontFamily={xs: [Theme.Fonts.recoleta]->#custom}>
-      {`Learn, Share and Repeat.`->React.string}
+      {`Learn, Share & Repeat.`->React.string}
     </Typography>
     <Grid spacing={xs: 3.0, md: 4.0}>
       {posts
@@ -25,6 +25,7 @@ let default = ({posts}: props) => {
           columns={xs: #12, md: #6}
           key={key->Belt.Int.toString}>
           <ArticleCard
+            slug=post.slug
             title=post.title
             text=post.excerpt
             publishedAt={post.publishedAt->Date.fromString}
