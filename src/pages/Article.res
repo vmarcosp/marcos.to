@@ -177,7 +177,7 @@ type props = {post: BlogClient.post}
 
 let default = ({post}: props) => {
   <Box
-    px={xs: 3.0, sm: 4.0} pt={xs: 8.0, md: 12.0} display={xs: #flex} justifyContent={xs: #center}>
+    px={xs: 3.0, sm: 4.0} py={xs: 8.0, md: 12.0} display={xs: #flex} justifyContent={xs: #center}>
     <Box width={xs: 100.->#pct} maxW={xs: 792->#px} position={xs: #relative}>
       <BackButton />
       <Header
